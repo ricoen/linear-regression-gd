@@ -1,5 +1,5 @@
 # linear-regression-gd
-An implementation of Linear Regression with Gradient Descent using Python. In this example I use data of relationship between power (kW) and Torque (Nm) with Motor Speed 2000 rpm.
+An implementation of Linear Regression using Gradient Descent with Python. In this example I use data of relationship between power (kW) and Torque (Nm) with Motor Speed 2000 rpm.
 
 For further information please visit the reference link below.
 
