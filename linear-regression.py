@@ -1,3 +1,4 @@
+import math
 import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
@@ -27,16 +28,32 @@ def gradient_descent(epochs, alpha):
         
 def predict(x_train):
     [m, c] = gradient_descent(1000, 0.01)
-    print(m, c)
+    print('m = %.5f c = %.5f\n' % (m, c))
     Y_predict = m*x_train + c
     
     return Y_predict
 
+def rmse(Y_predict):
+    n = len(x)
+    substract = []
+    squared_error = []
+    
+    for i in range(n):
+        subs = Y_predict[i] - y[i]
+        substract.append(subs)
+        square = pow(substract[i], 2)
+        squared_error.append(square)
+    
+    rmse = math.sqrt(sum(squared_error) / 5)
+    
+    return rmse
+    
 
 y_prediction = predict(x)
-y_prediction = np.round(y_prediction, 2)
+y_prediction = np.round(y_prediction, 3)
 
-print(y_prediction)
+print('Prediction = %s\n' % (y_prediction))
+print('RMSE = %s' % (rmse(y_prediction)))
 
 fig1 = px.scatter(x=x, y=y, color_discrete_sequence=['green'])
 fig = go.Figure(data=fig1.data)
