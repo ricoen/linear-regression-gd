@@ -44,7 +44,7 @@ def rmse(Y_predict):
         square = pow(substract[i], 2)
         squared_error.append(square)
     
-    rmse = math.sqrt(sum(squared_error) / 5)
+    rmse = math.sqrt(sum(squared_error) / n)
     
     return rmse
     
